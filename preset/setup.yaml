@@ -1,0 +1,10 @@
+render:
+  presentation:
+    src: background
+    shader: passthru
+    layer:
+      0:
+        blend: alpha
+        src: title
+
+show: presentation

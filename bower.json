@@ -1,0 +1,22 @@
+{
+  "name": "loopin-presentation",
+  "version": "0.0.0",
+  "authors": [
+    "koopero <koopero@gmail.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~3.1.0",
+    "reveal.js": "~3.3.0"
+  }
+}

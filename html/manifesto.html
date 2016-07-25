@@ -1,0 +1,199 @@
+<h1 id="the-tale-of-three-platforms">The tale of three platforms</h1>
+<h1 id="javascript">Javascript</h1>
+<ul>
+<li>node.js</li>
+<li>Webkit</li>
+<li>WebGL</li>
+</ul>
+<h2 id="pros">Pros</h2>
+<ul>
+<li>Easy to develop.</li>
+<li>Amazing ecosystem &amp; tooling.</li>
+<li>Understands the web.</li>
+<li>Communicates well.</li>
+<li>Asynchronous.</li>
+<li>Short development loop.</li>
+</ul>
+<h2 id="cons">Cons</h2>
+<ul>
+<li>No control over low-level goings-on.</li>
+<li>Huge overhead ( Webkit )</li>
+<li>No cool hardware ( Kinect )</li>
+</ul>
+<h1 id="c-">C++</h1>
+<ul>
+<li>OpenFrameworks</li>
+</ul>
+<h2 id="pros">Pros</h2>
+<ul>
+<li>Fast as a flushing toilet.</li>
+<li>Runs on metal.</li>
+<li>Low overhead.</li>
+<li>Supports Kinect.</li>
+<li>Better OpenGL.</li>
+<li>Does simple things well.</li>
+<li><em>Hopefully</em> runs on iOS, Android, Raspberry Pi.</li>
+</ul>
+<h2 id="cons">Cons</h2>
+<ul>
+<li>Slow to develop, slow to compile. Long development loop.</li>
+<li>High level stuff is tough. ( Untrusted data, )</li>
+</ul>
+<h1 id="quartz-composer">Quartz Composer</h1>
+<h2 id="pros">Pros</h2>
+<ul>
+<li>Nice hardware support.</li>
+<li>Fast rendering.</li>
+<li>Easy development of rapid prototypes.</li>
+</ul>
+<h2 id="cons">Cons</h2>
+<ul>
+<li>Development grows exponentially more burdensome as complexity increases.</li>
+<li>Largely fixed pipeline. Difficult to reconfigure in real time.</li>
+<li>Mac-only ( Quartz Composer )</li>
+<li>Windows-only ( Touch Designer )</li>
+</ul>
+<h1 id="loopin">Loopin</h1>
+<h2 id="the-best-of-all-worlds-and-more-">The best of all worlds... And more.</h2>
+<h1 id="architecture">Architecture</h1>
+<p><em>The simple version</em></p>
+<h2 id="your-application">Your Application</h2>
+<ul>
+<li>Written in node.js</li>
+<li>Includes assets ( image, shader, model, video files, etc )</li>
+<li>As little code as possible, or as much as you need.  </li>
+</ul>
+<h3 id="calls-via-eloquent-api-">Calls, via eloquent API...</h3>
+<h2 id="loopin-js">loopin.js</h2>
+<ul>
+<li>Slick, Promise-based API.</li>
+<li>Builds &amp; runs compiled binary, or connects remotely.</li>
+<li>Helper libraries with plugin system.
+*</li>
+</ul>
+<h3 id="talks-using-a-simple-path-value-protocol-to-">Talks using a simple path / value protocol to...</h3>
+<h2 id="ofxloopin">ofxLoopin</h2>
+<ul>
+<li>Virtual video device.</li>
+<li>&#39;Programmed&#39; over simple protocol.</li>
+<li>One binary used for all projects.</li>
+</ul>
+<h1 id="ofxloopin">ofxLoopin</h1>
+<ul>
+<li>A video virtual device.</li>
+<li>Does as many things as need doing, as simply as possible.</li>
+<li>Makes default behaviours as easy as possible.</li>
+<li>Everything is controllable with the same function: <code>patch( value, key )</code></li>
+<li>Almost everything is a <strong>Buffer</strong>.</li>
+<li>Nested layering through <code>render</code> subdevice.</li>
+<li>The state can be read using <code>read( path )</code>.</li>
+<li>Sends <strong>Events</strong> as JSON.</li>
+<li>Remote control of OS and hardware ( fullscreen ).</li>
+</ul>
+<h1 id="buffers">Buffers</h1>
+<ul>
+<li>Automatic double buffering on demand. Sweet feedback effect.</li>
+<li>Defines rendering resolution.</li>
+<li>Can be used as a texture <em>anywhere</em>.</li>
+<li>Output to jpeg or png.</li>
+</ul>
+<pre><code class="lang-yaml">buffer:
+  # Everything rendered to &#39;SNES&#39; will be pleasantly pixelated.
+  SNES:
+    width: 320
+    height: 252
+
+# The `show` sub-device sets the buffer that is shown on screen.
+show: SNES
+</code></pre>
+<h1 id="layers">Layers</h1>
+<ul>
+<li>Arbitrary number of textures, referencing <strong>Buffers</strong>, with control over cropping and tiling. This can include the <strong>Buffer</strong> currently being drawn.</li>
+<li>Reference to one <strong>Shader</strong>.</li>
+<li>Can include a <strong>Model</strong>, or default to a billboard.</li>
+<li>Control over all shader parameters ( uniforms ).</li>
+<li>Multi-pass rendering of complicated shaders.</li>
+<li>Can be nested.</li>
+</ul>
+<h2 id="example">Example</h2>
+<pre><code class="lang-yaml">render:
+  example:
+    # Everthing outside layer is rendered first.
+    src: background
+
+    layer:
+      # Note that due to implementation details,
+      # layers will be rendered alphabetically.
+      a:
+        src: midground
+        blend: over
+
+      b:
+        src: foreground
+        blend: add
+</code></pre>
+<h1 id="shaders">Shaders</h1>
+<ul>
+<li>Are referenced by <code>layers</code>.</li>
+<li>Can include controllable default uniforms.</li>
+</ul>
+<h2 id="example">Example</h2>
+<pre><code class="lang-yaml">shader:
+  dazzle:
+    # Load the shader from two GLSL files.
+    vert: shader/dazzle.vert
+    frag: shader/dazzle.frag
+
+    float:
+      # Custom uniform &#39;amount&#39; shader value.  
+      amount: 0.4
+
+render:
+  example:
+    shader: dazzle
+    float:
+</code></pre>
+<h1 id="io">IO</h1>
+<ul>
+<li>Windowed</li>
+<li>Fullscreen</li>
+<li>PNG / JPEG async read/write.</li>
+<li>Video ( ofVideo )</li>
+<li>Kinect 1 ( ofxKinect )</li>
+</ul>
+<h2 id="example">Example</h2>
+<pre><code class="lang-yaml"># Sets the device to fullscreen mode.
+window:
+  fullscreen: true
+
+
+# Opens default kinect and writes to &#39;kinectBuffer&#39; buffer,  
+kinect:
+  kinectBuffer: true
+
+
+# Reads the file &#39;image/stars.png&#39; into the `foreground` buffer.
+image:
+  foreground: image/stars.png
+
+
+# Saves the buffer &#39;example&#39; to a file called `output.png`
+save:
+  example:
+    dest: output.png
+    format: png
+
+
+# Loads a video and skips to one minute in.
+video:
+  videoBuffer:
+    playing: true
+    src: video/exampleVideo.mov
+    playhead: 60
+</code></pre>
+<h1 id="bonus-architectures">Bonus Architectures</h1>
+<ul>
+<li>One node.js application can control <em>many</em> independent screens.</li>
+<li>Dumb devices like Raspberry Pi &amp; iOS can be controlled remotely.</li>
+<li>OSC can be used for realtime control over specific parameters.</li>
+</ul>

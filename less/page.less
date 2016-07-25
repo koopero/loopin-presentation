@@ -1,0 +1,103 @@
+@import "font.less";
+
+html {
+  background: url(/image/background.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+}
+
+
+h1, h2, h3 {
+  clear: both;
+  font-family: 'Lobster', cursive;
+  font-weight: 200;
+  text-align: center;
+  font-size: 64px;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-shadow: 0 4px 6px black;
+  margin-bottom: 0.75em;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+section {
+  height: 100%;
+}
+
+.box {
+  background: rgba(0,0,0,0.25);
+  border: 1px solid white;
+}
+
+.split {
+  margin-left: 5%;
+  width: 90%;
+  font-size: 20px;
+  div {
+    .box;
+    width: 48%;
+    height: 50%;
+  }
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+}
+
+
+
+#architecture {
+  .diagram {
+    width: 60%;
+    margin: 0 20%;
+
+    .layer {
+      .box;
+
+      position: relative;
+
+      padding-left: 33%;
+
+      h3 {
+        // display: block;
+        display: table-cell;
+        position: absolute;
+        left: 0;
+        width: 33%;
+        height: 100%;
+        vertical-align: middle;
+        margin: 0;
+        padding-top: 0.6em ;
+      }
+    }
+
+    .yourapp {
+      background-color: rgba(0,128,0,0.25);
+    }
+
+    .connector {
+      padding: 48px;
+      background: url(/image/arrow-up.png), url(/image/arrow-down.png);
+      background-position: center top, center bottom;
+      background-repeat: no-repeat;
+      text-align: center;
+      font-size: 130%;
+      font-weight: 300;
+      text-shadow: 0 2px 3px black;
+    }
+
+  }
+}
