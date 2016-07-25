@@ -9,6 +9,8 @@ const express = require('express')
 const loopin = require('../loopin')
     , loopinServer = loopin.plugin( require('loopin-server'), { port: 0 } )
 
+require('../loopin/pondcreature')( loopin )
+
 const content = require('./content')
 
 app.engine('pug', pug.__express )

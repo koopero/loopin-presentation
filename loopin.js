@@ -14,6 +14,8 @@ loopin.imageDir()
 
 loopin.plugin('presetDir')
 loopin.preset('setup')
+loopin.preset('pondcreature')
+
 
 loopin.patch({ osd: -1 }, 'window')
 
@@ -23,3 +25,11 @@ loopin.plugin('bootstrap', {
     cwd: __dirname
   }
 })
+
+//
+// loopin.plugin( require('loopin-ssh'), {
+//   host: 'skookum.local',
+//   username: 'skookum',
+//   password: 'cooperengineering',
+//   cd: '~/loopin-presentation/'
+// })

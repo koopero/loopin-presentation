@@ -32,5 +32,6 @@ gulp.task('reload', function () {
 gulp.task('watch', function () {
   reload.listen()
   gulp.watch(['less/*.less'], ['less'] )
-  gulp.watch(['md/*'], ['reload'] )
+  gulp.watch(['html/*'], ['reload'] )
+  gulp.watch(['js/*'], ['reload'] )
 })

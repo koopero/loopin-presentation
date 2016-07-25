@@ -1,10 +1,23 @@
+image:
+  slide: image/quartz.png
+
 render:
   presentation:
     src: background
     shader: passthru
     layer:
       0:
+        blend: add
+        src: midground
+      1:
         blend: alpha
-        src: title
+        src: slide
+
+buffer:
+  presentation:
+    width: 1920
+    height: 1080
 
 show: presentation
+# window:
+#   fullscreen: true

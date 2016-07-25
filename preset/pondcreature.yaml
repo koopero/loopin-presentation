@@ -1,0 +1,48 @@
+image:
+  pond: image/pond.jpg
+  water: image/pondWater.jpg
+  tentacle: image/tentacle.png
+
+render:
+  onetentacle:
+    passes: 0
+    layer:
+      0:
+        src: tentacle
+        blend: alpha
+        shader: tentacle
+        transform:
+          mode: contain
+          y: 0.1
+          aspect: 0.2
+          scale: 0.8
+
+  tentacles:
+    passes: 0
+
+  pondcreature:
+    src: pond
+    blend: alpha
+    shader: ripple
+    tex:
+      water: water
+
+    layer:
+      critter:
+        blend: alpha
+        src: tentacles
+        shader: reflect
+
+mesh:
+  tentacle:
+    grid:
+      rows: 32
+      cols: 8
+
+
+buffer:
+  onetentacle: { width: 1920, height: 1080 }
+  tentacles: { width: 1920, height: 1080 }
+  pondcreature: { width: 1920, height: 1080 }
+
+show: pondcreature

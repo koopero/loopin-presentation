@@ -1,6 +1,6 @@
+hljs.initHighlightingOnLoad()
 
 const slides = slidesInit()
-console.log( slides.names )
 
 
 slides.set(window.location.hash.substr(1))
@@ -21,6 +21,15 @@ $(function () {
         default: return // exit this handler for other keys
     }
     e.preventDefault()
+  })
+
+  $('code.lang-yaml')
+  .addClass('runnable')
+  .on('click', function () {
+    var $code = $(this)
+      , source = $code.text()
+
+    loopinPatch( source )
   })
 })
 
@@ -96,13 +105,15 @@ function slide( $slide ) {
   var $script = $slide.find('script[type="application/x-loopin-yaml"]')
   if ( $script.length ) {
     var source = $script.text()
-      , data = jsyaml.load( source )
 
-    loopinPatch( data )
+    loopinPatch( source )
   }
 }
 
 function loopinPatch( value, path ) {
+  if ( 'string' == typeof value )
+    value = jsyaml.load( value )
+
   path = path || ''
 
   var url = '/loopin/patch/'+path

@@ -53,7 +53,7 @@ h3 {
 
 .box {
   background: rgba(0,0,0,0.25);
-  border: 1px solid white;
+  border: 1px solid rgba(255,255,255,0.5);
 }
 
 .split {
@@ -86,6 +86,55 @@ h3 {
   }
 }
 
+ul.mainlist, .from-md ul {
+  margin: 0 20%;
+  font-size: 150%;
+  li {
+    margin-bottom: 0.25em;
+  }
+}
+
+.hljs {
+  .box;
+  background-color: rgba(43, 48, 59,0.3);
+  display: inline-block;
+  clear: none;
+}
+
+pre {
+  display: inline-block;
+}
+
+.row {
+  clear: both;
+  width: 96%;
+  margin: 0 2%;
+  .column {
+    float: left;
+    box-sizing: border-box;
+  }
+  &.cols-2 {
+    .column {
+      padding: 48px;
+      width: 50%;
+    }
+  }
+}
+
+.runnable {
+  border: 2px solid white;
+  border-radius: 8px;
+  box-shadow: 0 0 24px white;
+}
+
+.runnable:not(:active) {
+    /* now keep red background for 1s */
+    transition: background-color 500ms;
+}
+
+.runnable:active {
+  background-color: rgba(0, 100, 0,0.3);
+}
 
 #architecture {
   .diagram {
