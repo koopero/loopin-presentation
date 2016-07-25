@@ -2,8 +2,12 @@ html
   head
     title= 'Introducing Loopin'
     link(href='/css/page.css', rel='stylesheet')
-    script(src='/js/presentation.js')
+    script(src='/bower/jquery/dist/jquery.js')
+    script(src='/bower/js-yaml/dist/js-yaml.js')
+
+
   body
-    div(class='content')
-    each content, id in sections
-      section(id=id)!= content
+    div(id='slides')
+      each content, id in sections
+        section(id=id)!= content
+    script(src='/js/presentation.js')

@@ -27,8 +27,8 @@ exports.sections = function ( key ) {
 }
 
 function loadEither( section ) {
-  const mdPath = pathlib.resolve( __dirname, '..', 'md', section+'.md')
-      , htmlPath = pathlib.resolve( __dirname, '..', 'md', section+'.html')
+  const mdPath = pathlib.resolve( __dirname, '..', 'html', section+'.md')
+      , htmlPath = pathlib.resolve( __dirname, '..', 'html', section+'.html')
 
   return fileExists( htmlPath )
   .then( function ( htmlExists ) {

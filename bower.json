@@ -17,6 +17,6 @@
   ],
   "dependencies": {
     "jquery": "~3.1.0",
-    "reveal.js": "~3.3.0"
+    "js-yaml": "~3.6.1"
   }
 }
