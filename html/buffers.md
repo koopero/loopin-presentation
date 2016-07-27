@@ -29,16 +29,17 @@ show: pondcreature
 ```
 
 ``` yaml
-# Load tentacle from an image
+# Load a different tentacle
 image:
   tentacle: image/finger.png
 ```
 
 ``` yaml
-# Load tentacle from an image
+# Load a different pond
 image:
-  tentacle: image/tentacle.png
+  pond: image/otherpond.png
 ```
+
 
 ``` yaml
 # Back to HD
@@ -52,3 +53,9 @@ buffer:
 
 show: pondcreature
 ```
+
+``` yaml
+# Default images
+image:
+  tentacle: image/tentacle.png
+  pond: image/pond.jpg
