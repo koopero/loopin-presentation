@@ -1,4 +1,5 @@
 # Layers
+## Building a scene.
 
 ``` yaml
 # The Pond Creature
@@ -27,6 +28,7 @@ onetentacle:
       src: tentacle
       blend: alpha
       shader: tentacle
+      mesh: tentacle
       transform:
         mode: contain
         y: 0.1
@@ -34,4 +36,14 @@ onetentacle:
         scale: 0.8
 
 render: { pondcreature: { layer: { critter: { src: onetentacle }}}}
+```
+
+``` yaml
+# Set transform parameters
+render: { onetentacle: { layer: { 0: { transform: { x: 0.5}}}}}
+```
+
+``` yaml
+# Set transform parameters
+render: { onetentacle: { layer: { 0: { transform: { x: -0.5, aspect: 1 }}}}}
 ```

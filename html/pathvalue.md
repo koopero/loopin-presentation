@@ -1,5 +1,5 @@
 # Value / Path
-<p class='description'>Operatives and data are the same thing.</p>
+## Operatives and data are the same thing.
 
 ``` yaml
 # YAML Object

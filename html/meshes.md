@@ -1,5 +1,5 @@
 # Meshes
-
+## Food for vertex shaders.
 ``` yaml
 # Use a different shader to show mesh cells
 shader:

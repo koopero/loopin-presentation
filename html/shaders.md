@@ -1,5 +1,5 @@
 # Shaders
-<p class='description'>This is where things get metal.</p>
+## This is where things get metal.
 
 ``` yaml
 # Load a different vertex shader

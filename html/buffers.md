@@ -1,4 +1,5 @@
 # Buffers
+## Pushing pixels from input to output.
 
 ``` yaml
 # Show the pond background
