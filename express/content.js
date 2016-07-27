@@ -5,8 +5,9 @@ const Promise = require('bluebird-extra')
     , marked = Promise.promisify( markedOrig )
 
 const sections = [
+  'lupin',
   'loopin',
-  'details',
+  // 'details',
   'platforms',
   'javascript',
   'cplusplus',
@@ -20,7 +21,11 @@ const sections = [
   'layers',
   'shaders',
   'meshes',
-  'uniforms'
+  'uniforms',
+  'animation',
+  'status',
+  'tutorial',
+
 ]
 
 exports.sections = function ( key ) {

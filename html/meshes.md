@@ -1,7 +1,18 @@
 # Meshes
 
 ``` yaml
-# Change the resolution of the mesh
+# Use a different shader to show mesh cells
+shader:
+  tentacle:
+    vert: shader/cells.vert
+    frag: shader/cells.frag
+
+show:
+  pondcreature
+```
+
+``` yaml
+# Low resolution mesh
 mesh:
   tentacle:
     grid:
@@ -11,24 +22,11 @@ mesh:
 ```
 
 ``` yaml
-# Change the resolution of the mesh
+# High resolution mesh
 mesh:
   tentacle:
     grid:
-      cols: 2
-      rows: 8
-      split: false
-```
-
-
-``` yaml
-# Use a different shader to show cells
-
-shader:
-  tentacle:
-    vert: shader/cells.vert
-    frag: shader/cells.frag
-
-show:
-  pondcreature
+      cols: 4
+      rows: 24
+      split: true
 ```

@@ -33,12 +33,13 @@ void main()
 
     vec4 pos = position;
 
-    pos.x *= 1.2;
-    pos.x *= cos( pos.y * 5.0 - frameTime * 2.0 + phase * 6.0 ) * 0.3 + 1.0;
-
+    // pos.x *= 1.2;
+    // pos.x *= cos( pos.y * 5.0 - frameTime * 2.0 + phase * 6.0 ) * 0.3 + 1.0;
+    pos.x += cos( pos.y * 3.0 + frameTime ) * 0.1;
     pos = modelViewProjectionMatrix * pos;
-    pos.x += cos(pos.y * 20.0) * 0.01;
-    pos.y += sin(pos.x * 10.0) * 0.02;
+    pos.y += cos( pos.x * 1000.0 ) * 0.04;
+    // pos.x += cos(pos.y * 20.0) * 0.03;
+    // pos.y += sin(pos.x * 10.0) * 0.02;
     // send the vertices to the fragment shader
     gl_Position = pos;
 }

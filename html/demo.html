@@ -5,6 +5,8 @@
   <li>Shaders</li>
   <li>Meshes</li>
   <li>Uniforms</li>
+  <li>Animation</li>
+
 </ul>
 <script type='application/x-loopin-yaml'>
 render:
@@ -12,6 +14,11 @@ render:
     layer:
       critter:
         src: tentacles
+
+shader:
+  tentacle:
+    vert: shader/tentacle.vert
+    frag: shader/tentacle.frag
 
 show: pondcreature
 </script>

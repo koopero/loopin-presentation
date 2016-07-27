@@ -22,6 +22,6 @@ void main()
   float s = 0.35 + c.b * 0.1;
 
 
-  outputColour.rgb = hsv2rgb( vec3(h, s, v ) );
-  outputColour.a = c.a;
+  outputColour.rg = srcCoord;
+  outputColour.a = 1.0;
 }

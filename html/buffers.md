@@ -1,14 +1,20 @@
 # Buffers
 
 ``` yaml
-# Send the buffer to display
+# Show the pond background
 show: pond
 ```
 
 ``` yaml
-# Send the buffer to display
+# Show the water mask
+show: water
+```
+
+``` yaml
+# Show the tentacles
 show: tentacles
 ```
+
 
 
 ``` yaml
@@ -22,11 +28,26 @@ show: pondcreature
 ```
 
 ``` yaml
+# Load tentacle from an image
+image:
+  tentacle: image/finger.png
+```
+
+``` yaml
+# Load tentacle from an image
+image:
+  tentacle: image/tentacle.png
+```
+
+``` yaml
 # Back to HD
 buffer:
-  tentacles: { width: 1920, height: 1080 }
-  pondcreature: { width: 1920, height: 1080 }
-
+  tentacles:
+    width: 1920
+    height: 1080
+  pondcreature:
+    width: 1920
+    height: 1080
 
 show: pondcreature
 ```

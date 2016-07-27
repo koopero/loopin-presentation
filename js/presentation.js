@@ -23,6 +23,16 @@ $(function () {
     e.preventDefault()
   })
 
+  $('section').each( function () {
+    var $this = $(this)
+      , $codes = $('<div class="codes grid"></div>')
+
+    $this.append($codes)
+    $this.find('pre')
+      .appendTo($codes)
+      .addClass('grid-item')
+  })
+
   $('code.lang-yaml')
   .addClass('runnable')
   .on('click', function () {
@@ -31,6 +41,8 @@ $(function () {
 
     loopinPatch( source )
   })
+
+
 })
 
 function slidesInit() {
@@ -101,6 +113,8 @@ function slide( $slide ) {
     , slideHeight = $slide.height()
 
   $slide.css( 'top', ( windowHeight - slideHeight ) / 2 )
+
+  // $slide.find('.grid').masonry('layout')
 
   var $script = $slide.find('script[type="application/x-loopin-yaml"]')
   if ( $script.length ) {

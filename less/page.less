@@ -26,6 +26,12 @@ body {
   }
 }
 
+img {
+  display: block;
+  margin: 0 auto 24px;
+  box-shadow: 0 3px 10px black;
+}
+
 h1, h2, h3 {
   clear: both;
   font-family: 'Lobster', cursive;
@@ -33,18 +39,19 @@ h1, h2, h3 {
   text-align: center;
   margin: 0;
   padding: 0;
-  text-shadow: 0 4px 6px black;
+  text-shadow: 0 4px 3px rgb(0,0,0);
 
 }
 
 h1 {
-  margin-bottom: 0.75em;
+  margin-bottom: 0.125em;
   text-align: center;
   font-size: 80px;
 }
 
 h2 {
-  font-size: 64px;
+  font-size: 54px;
+  margin-bottom: 0.75em;
 }
 
 h3 {
@@ -99,10 +106,18 @@ ul.mainlist, .from-md ul {
   background-color: rgba(43, 48, 59,0.3);
   display: inline-block;
   clear: none;
+  margin: 8px;
+  padding: 16px;
+}
+
+.codes {
+  margin: 0 3%;
+  width: 94%
 }
 
 pre {
   display: inline-block;
+  margin: 0;
 }
 
 .row {
@@ -119,6 +134,13 @@ pre {
       width: 50%;
     }
   }
+}
+
+.description {
+  display: block;
+  text-align: center;
+  // margin: 0 32%;
+  font-size: 200%;
 }
 
 .runnable {

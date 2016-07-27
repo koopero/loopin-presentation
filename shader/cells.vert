@@ -34,10 +34,10 @@ uniform float phase;
 void main()
 {
     // here we move the texture coordinates
-    srcCoord = vec2(color.x, color.y);
+    srcCoord = color.xy;
     // srcCoord *= vec2( 1.0, 1.0 );
     // srcCoord = (srcMatrix*vec4(srcCoord.x,srcCoord.y,0,1)).xy;
-    srcCoord *= textureSize( srcSampler );
+    // srcCoord *= textureSize( srcSampler );
 
     vec4 pos = position;
 

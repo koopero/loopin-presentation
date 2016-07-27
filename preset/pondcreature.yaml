@@ -38,6 +38,7 @@ mesh:
     grid:
       rows: 32
       cols: 8
+      split: true
 
 
 buffer:
