@@ -1,3 +1,5 @@
+const RUN_LOCAL = false
+
 const Loopin = require('loopin')
     , loopin = module.exports = Loopin()
 
@@ -19,17 +21,15 @@ loopin.preset('pondcreature')
 
 loopin.patch({ osd: -1 }, 'window')
 
-loopin.plugin('bootstrap', {
-  builder: {
-    verbose: true,
-    cwd: __dirname
-  }
-})
 
+var sshConfig
+try {
+  sshConfig = require('./sshConfig.json')
+} catch ( e ) {
+  sshConfig = null
+}
 
-// loopin.plugin( require('loopin-ssh'), {
-//   host: 'skookum.local',
-//   username: 'skookum',
-//   password: 'cooperengineering',
-//   cd: '~/loopin-presentation/'
-// })
+if ( !RUN_LOCAL && sshConfig )
+  loopin.plugin( require('loopin-ssh'), sshConfig )
+else
+  loopin.plugin('bootstrap', {})

@@ -19,5 +19,8 @@ buffer:
     height: 1080
 
 show: presentation
-# window:
-#   fullscreen: true
+
+window:
+#  fullscreen: true
+  # width: 1600
+  # height: 900
