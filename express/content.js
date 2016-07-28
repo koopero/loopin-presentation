@@ -23,6 +23,7 @@ const sections = [
   'uniforms',
   'meshes',
   'animation',
+  'extra',
   // 'status',
   'tutorial',
 

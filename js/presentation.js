@@ -4,7 +4,8 @@ const slides = slidesInit()
 
 
 slides.set(window.location.hash.substr(1))
-doRead()
+// doRead()
+$('#read-wrapper').hide()
 
 $(function () {
   $(window).on( 'keydown', function( e ) {

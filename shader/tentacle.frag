@@ -21,7 +21,11 @@ void main()
   float h = hue + 0.75 + c.r * 0.2;
   float s = 0.35 + c.b * 0.1;
 
-
+  // HSV Version
   outputColour.rgb = hsv2rgb( vec3(h, s, v ) );
+
+  // RGB Version
+  // outputColour.rgb = c.rgb;
+
   outputColour.a = c.a;
 }
