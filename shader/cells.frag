@@ -23,5 +23,6 @@ void main()
 
 
   outputColour.rg = srcCoord;
-  outputColour.a = 1.0;
+  outputColour.b = 1.0;
+  outputColour.a = 0.9;
 }

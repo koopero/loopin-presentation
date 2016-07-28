@@ -1,4 +1,4 @@
-const RUN_LOCAL = true
+const RUN_LOCAL = false
 
 const Loopin = require('loopin')
     , loopin = module.exports = Loopin()
