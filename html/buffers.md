@@ -2,6 +2,12 @@
 ## Pushing pixels from input to output.
 
 ``` yaml
+# Show the composition
+show: pondcreature
+```
+
+
+``` yaml
 # Show the pond background
 show: pond
 ```
@@ -19,26 +25,33 @@ show: tentacles
 
 
 ``` yaml
-# Change render resolution.
+# Change render resolution of tentacles.
 buffer:
   tentacles:
     width: 160
     height: 90
-
-show: pondcreature
 ```
 
 ``` yaml
-# Load tentacle from an image
+# Change render resolution of pondcreature.
+buffer:
+  pondcreature:
+    width: 320
+    height: 180
+```
+
+``` yaml
+# Load a different tentacle
 image:
   tentacle: image/finger.png
 ```
 
 ``` yaml
-# Load tentacle from an image
+# Load a different pond
 image:
-  tentacle: image/tentacle.png
+  pond: image/otherpond.jpg
 ```
+
 
 ``` yaml
 # Back to HD
@@ -49,6 +62,11 @@ buffer:
   pondcreature:
     width: 1920
     height: 1080
+```
 
-show: pondcreature
+``` yaml
+# Default images
+image:
+  tentacle: image/tentacle.png
+  pond: image/pond.jpg
 ```

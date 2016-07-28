@@ -30,3 +30,13 @@ mesh:
       rows: 24
       split: true
 ```
+
+
+``` yaml
+# Direct mesh editing
+mesh:
+  tentacle:
+    vertex:
+      0: [ -2.5, -1]
+      1: { y: -1.8 }  
+```

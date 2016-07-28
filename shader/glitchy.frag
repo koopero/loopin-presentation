@@ -53,8 +53,8 @@ void main()
   blue = texture(srcSampler, blue.xy );
 
   vec4 c = vec4( red.r, green.g, blue.b, ( red.a + green.a + blue.a ) * 0.3 );
-  c *= vec4( 1.2, 0.7, 3.0, 2.0 );
-  c.rg *= c.bb + vec2( 0.2, 0.4 );
+  c *= vec4( 0.6, 0.8, 1.2, 1.5 );
+  c.rg *= c.bb + vec2( 0.02, 0.04 );
 
   outputColour = c;
 }

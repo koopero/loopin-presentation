@@ -4,17 +4,28 @@ const slides = slidesInit()
 
 
 slides.set(window.location.hash.substr(1))
+// doRead()
+$('#read-wrapper').hide()
 
 $(function () {
   $(window).on( 'keydown', function( e ) {
     switch(e.which) {
-        case 37: // left
+
+        case 40: // down
+          $('#read-wrapper').hide()
+        break
+
         case 38: // up
+          doRead()
+        break
+
+        case 37: // left
+
           slides.prev()
         break
 
         case 39: // right
-        case 40: // down
+
           slides.next()
         break;
 
@@ -137,5 +148,20 @@ function loopinPatch( value, path ) {
     data: JSON.stringify( value ),
     contentType: "application/json",
     dataType: 'json'
+  })
+}
+
+
+function doRead() {
+  var url = '/loopin/read/'
+  $.getJSON( url, function ( data ) {
+    data = jsyaml.dump( data )
+    $('#read-wrapper').html('<pre><code class="lang-yaml">'+data+"</code></pre>").show()
+
+    $('#read-wrapper code').each(function(i, block) {
+      hljs.highlightBlock(block);
+    })
+
+    console.log( data )
   })
 }

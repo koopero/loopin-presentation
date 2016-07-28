@@ -10,7 +10,7 @@
 
 <script type='application/x-loopin-yaml'>
 image:
-  midground: image/husky.jpg
+  background: image/husky.jpg
   slide: image/eatandpoop.png
 show: presentation
 </script>

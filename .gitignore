@@ -3,3 +3,4 @@ node_modules/
 tmp/
 css/
 bower/
+sshConfig.json
